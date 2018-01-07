@@ -18,7 +18,6 @@ public class ContactHelper extends HelperBase {
     type(By.name("firstname"), contactData.getName());
     type(By.name("lastname"), contactData.getLastname());
     type(By.name("address"), contactData.getAddress());
-    click(By.name("theform"));
     type(By.name("home"), contactData.getHomePhone());
     type(By.name("mobile"), contactData.getMobilePhone());
   }
@@ -34,5 +33,13 @@ public class ContactHelper extends HelperBase {
 
   public void selectContact() {
     click(By.name("selected[]"));
+  }
+
+  public void initContactModification() {
+    click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+  }
+
+  public void submitContactModification() {
+    click(By.name("update"));
   }
 }
