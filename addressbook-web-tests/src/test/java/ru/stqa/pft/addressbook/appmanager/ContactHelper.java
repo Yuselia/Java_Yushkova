@@ -4,19 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.pft.addressbook.model.ContactData;
 
-public class ContactHelper {
-  private FirefoxDriver wd;
+public class ContactHelper extends HelperBase {
 
   public ContactHelper(FirefoxDriver wd) {
-    this.wd = wd;
+    super(wd);
   }
 
   public void submitContactCreation() {
     click(By.xpath("//div[@id='content']/form/input[21]"));
-  }
-
-  private void click(By locator) {
-    wd.findElement(locator).click();
   }
 
   public void fillContactForm(ContactData contactData) {
@@ -26,12 +21,6 @@ public class ContactHelper {
     click(By.name("theform"));
     type(By.name("home"), contactData.getHomePhone());
     type(By.name("mobile"), contactData.getMobilePhone());
-  }
-
-  private void type(By locator, String text) {
-    click(locator);
-    wd.findElement(locator).clear();
-    wd.findElement(locator).sendKeys(text);
   }
 
   public void initContactCreation() {
