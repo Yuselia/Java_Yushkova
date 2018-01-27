@@ -13,11 +13,11 @@ public class ContactDeletionTests extends TestBase {
         if (!app.getContactHelper().isThereAContact()) {
             app.getContactHelper().createContact(new ContactData("name", "Sourname", "test1","Test street", "12345", "89271111111", "yuselia@yandex.ru"));
         }
-        int before=app.getContactHelper().getContactCount()-1;
-        app.getContactHelper().selectContact(before-1);
+        int before=app.getContactHelper().getContactCount();
+        app.getContactHelper().selectContact(before);
         app.getContactHelper().deleteSelectedContacts();
         app.getNavigationHelper().gotoHomePage();
-        int after=app.getContactHelper().getContactCount()-1;
+        int after=app.getContactHelper().getContactCount();
         Assert.assertEquals(after, before-1);
     }
 

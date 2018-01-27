@@ -45,7 +45,7 @@ public class ContactHelper extends HelperBase {
   }
 
   public void selectContact(int index) {
-    wd.findElements(By.name("selected[]")).get(index).click();
+    wd.findElements(By.name("selected[]")).get(index-1).click();
   }
 
   public void initContactModification() {
@@ -72,6 +72,6 @@ public class ContactHelper extends HelperBase {
   }
 
   public int getContactCount() {
-    return wd.findElements(By.xpath("//table[@id='maintable']/tbody/tr")).size();
+    return wd.findElements(By.xpath("//table[@id='maintable']/tbody/tr")).size()-1;
   }
 }
