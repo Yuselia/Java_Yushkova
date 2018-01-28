@@ -49,12 +49,11 @@ public class ContactHelper extends HelperBase {
   }
 
   public void selectContact(int index) {
-    List<WebElement> elements = wd.findElements(By.xpath("//input[@name='selected[]']"));
     wd.findElements(By.xpath("//input[@name='selected[]']")).get(index).click();
   }
 
   public void initContactModification(int index) {
-    wd.findElements(By.xpath("//td[8]/a/img")).get(index - 1).click();
+    wd.findElements(By.xpath("//td[8]/a/img")).get(index).click();
   }
 
   public void submitContactModification() {
