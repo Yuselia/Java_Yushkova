@@ -80,6 +80,7 @@ public class ContactHelper extends HelperBase {
     initContactModification(index);
     fillContactForm(contact, false);
     submitContactModification();
+    returnToHomePage();
   }
 
   public boolean isThereAContact() {
