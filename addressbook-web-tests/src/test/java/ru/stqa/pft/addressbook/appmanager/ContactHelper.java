@@ -12,7 +12,9 @@ import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ContactHelper extends HelperBase {
 
@@ -93,6 +95,21 @@ public class ContactHelper extends HelperBase {
 
   public List<ContactData> list() {
     List<ContactData> contacts = new ArrayList<ContactData>();
+    List<WebElement> strings = wd.findElements(By.xpath("//tr[@name]"));
+
+    for (int i=0; i<strings.size(); i++)
+    {
+      int id=Integer.parseInt(strings.get(i).findElement(By.xpath("td[1]/input")).getAttribute("value"));
+      String lastName = strings.get(i).findElement(By.xpath("./td[2]")).getText();
+      String firstName = strings.get(i).findElement(By.xpath("./td[3]")).getText();
+      ContactData contact = new ContactData().withId(id).withName(firstName).withLastname(lastName);
+      contacts.add(contact);
+    }
+    return contacts;
+  }
+
+  public Set<ContactData> all() {
+    Set<ContactData> contacts = new HashSet<ContactData>();
     List<WebElement> strings = wd.findElements(By.xpath("//tr[@name]"));
 
     for (int i=0; i<strings.size(); i++)
