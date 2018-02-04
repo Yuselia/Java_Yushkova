@@ -88,7 +88,7 @@ public class ContactHelper extends HelperBase {
     return isElementPresent(By.name("selected[]"));
   }
 
-  public int getContactCount() {
+  public int count() {
     return wd.findElements(By.xpath("//table[@id='maintable']/tbody/tr")).size() - 1;
   }
 
