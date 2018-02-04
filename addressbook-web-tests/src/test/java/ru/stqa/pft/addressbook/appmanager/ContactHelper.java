@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.Contacts;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -87,8 +89,8 @@ public class ContactHelper extends HelperBase {
     return wd.findElements(By.xpath("//table[@id='maintable']/tbody/tr")).size() - 1;
   }
 
-  public Set<ContactData> all() {
-    Set<ContactData> contacts = new HashSet<ContactData>();
+  public Contacts all() {
+    Contacts contacts = new Contacts();
     List<WebElement> strings = wd.findElements(By.xpath("//tr[@name]"));
 
     for (int i=0; i<strings.size(); i++)
@@ -96,8 +98,7 @@ public class ContactHelper extends HelperBase {
       int id=Integer.parseInt(strings.get(i).findElement(By.xpath("td[1]/input")).getAttribute("value"));
       String lastName = strings.get(i).findElement(By.xpath("./td[2]")).getText();
       String firstName = strings.get(i).findElement(By.xpath("./td[3]")).getText();
-      ContactData contact = new ContactData().withId(id).withName(firstName).withLastname(lastName);
-      contacts.add(contact);
+      contacts.add(new ContactData().withId(id).withName(firstName).withLastname(lastName));
     }
     return contacts;
   }
