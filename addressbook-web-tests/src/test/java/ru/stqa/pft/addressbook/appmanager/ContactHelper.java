@@ -100,14 +100,17 @@ public class ContactHelper extends HelperBase {
       return new Contacts(contactCache);
     }
     contactCache = new Contacts();
-    List<WebElement> strings = wd.findElements(By.xpath("//tr[@name]"));
+    List<WebElement> rows = wd.findElements(By.xpath("//tr[@name]"));
 
-    for (int i=0; i<strings.size(); i++)
+    for (WebElement row: rows)
     {
-      int id=Integer.parseInt(strings.get(i).findElement(By.xpath("td[1]/input")).getAttribute("value"));
-      String lastName = strings.get(i).findElement(By.xpath("./td[2]")).getText();
-      String firstName = strings.get(i).findElement(By.xpath("./td[3]")).getText();
-      contactCache.add(new ContactData().withId(id).withName(firstName).withLastname(lastName));
+      List<WebElement> cells=row.findElements(By.tagName("td"));
+      int id=Integer.parseInt(cells.get(0).findElement(By.tagName("input")).getAttribute("value"));
+      String lastName = cells.get(1).getText();
+      String firstName = cells.get(2).getText();
+      String[] phones = cells.get(5).getText().split("\n");
+      contactCache.add(new ContactData().withId(id).withName(firstName).withLastname(lastName).
+              withHomePhone(phones[0]).withMobilePhone(phones[1]).withWorkPhone(phones[2]));
     }
     return new Contacts(contactCache);
   }
