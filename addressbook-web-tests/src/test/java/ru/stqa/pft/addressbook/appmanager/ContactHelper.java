@@ -30,12 +30,21 @@ public class ContactHelper extends HelperBase {
     type(By.name("home"), contactData.getHomePhone());
     type(By.name("mobile"), contactData.getMobilePhone());
     type(By.name("email"), contactData.getEmail());
+    attach(By.name("photo"), contactData.getPhoto());
 
     if (creation) {
       new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
     } else {
       Assert.assertFalse(isElementPresent(By.name("new_group")));
     }
+  }
+
+  public void create(ContactData contact) {
+    initContactCreation();
+    fillContactForm(contact, true);
+    submitContactCreation();
+    contactCache=null;
+    returnToHomePage();
   }
 
   public void initContactCreation() {
@@ -63,13 +72,7 @@ public class ContactHelper extends HelperBase {
     click(By.linkText("home page"));
   }
 
-  public void create(ContactData contact) {
-    initContactCreation();
-    fillContactForm(contact, true);
-    submitContactCreation();
-    contactCache=null;
-    returnToHomePage();
-  }
+
 
   public void delete(ContactData contact) {
     selectContactById(contact.getId());
