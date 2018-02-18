@@ -1,0 +1,242 @@
+<list>
+  <contact>
+    <name>test 0</name>
+    <lastname>lastname 0</lastname>
+    <address>address 0</address>
+    <homePhone>000</homePhone>
+    <mobilePhone>0000</mobilePhone>
+    <workPhone>00</workPhone>
+    <email>yuselia+0@yandex.ru</email>
+    <email2>yuselia+00@yandex.ru</email2>
+    <email3>yuselia+000@yandex.ru</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <name>test 1</name>
+    <lastname>lastname 1</lastname>
+    <address>address 1</address>
+    <homePhone>111</homePhone>
+    <mobilePhone>1111</mobilePhone>
+    <workPhone>11</workPhone>
+    <email>yuselia+1@yandex.ru</email>
+    <email2>yuselia+11@yandex.ru</email2>
+    <email3>yuselia+111@yandex.ru</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <name>test 2</name>
+    <lastname>lastname 2</lastname>
+    <address>address 2</address>
+    <homePhone>222</homePhone>
+    <mobilePhone>2222</mobilePhone>
+    <workPhone>22</workPhone>
+    <email>yuselia+2@yandex.ru</email>
+    <email2>yuselia+22@yandex.ru</email2>
+    <email3>yuselia+222@yandex.ru</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <name>test 3</name>
+    <lastname>lastname 3</lastname>
+    <address>address 3</address>
+    <homePhone>333</homePhone>
+    <mobilePhone>3333</mobilePhone>
+    <workPhone>33</workPhone>
+    <email>yuselia+3@yandex.ru</email>
+    <email2>yuselia+33@yandex.ru</email2>
+    <email3>yuselia+333@yandex.ru</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <name>test 4</name>
+    <lastname>lastname 4</lastname>
+    <address>address 4</address>
+    <homePhone>444</homePhone>
+    <mobilePhone>4444</mobilePhone>
+    <workPhone>44</workPhone>
+    <email>yuselia+4@yandex.ru</email>
+    <email2>yuselia+44@yandex.ru</email2>
+    <email3>yuselia+444@yandex.ru</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <name>test 5</name>
+    <lastname>lastname 5</lastname>
+    <address>address 5</address>
+    <homePhone>555</homePhone>
+    <mobilePhone>5555</mobilePhone>
+    <workPhone>55</workPhone>
+    <email>yuselia+5@yandex.ru</email>
+    <email2>yuselia+55@yandex.ru</email2>
+    <email3>yuselia+555@yandex.ru</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <name>test 6</name>
+    <lastname>lastname 6</lastname>
+    <address>address 6</address>
+    <homePhone>666</homePhone>
+    <mobilePhone>6666</mobilePhone>
+    <workPhone>66</workPhone>
+    <email>yuselia+6@yandex.ru</email>
+    <email2>yuselia+66@yandex.ru</email2>
+    <email3>yuselia+666@yandex.ru</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <name>test 7</name>
+    <lastname>lastname 7</lastname>
+    <address>address 7</address>
+    <homePhone>777</homePhone>
+    <mobilePhone>7777</mobilePhone>
+    <workPhone>77</workPhone>
+    <email>yuselia+7@yandex.ru</email>
+    <email2>yuselia+77@yandex.ru</email2>
+    <email3>yuselia+777@yandex.ru</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <name>test 8</name>
+    <lastname>lastname 8</lastname>
+    <address>address 8</address>
+    <homePhone>888</homePhone>
+    <mobilePhone>8888</mobilePhone>
+    <workPhone>88</workPhone>
+    <email>yuselia+8@yandex.ru</email>
+    <email2>yuselia+88@yandex.ru</email2>
+    <email3>yuselia+888@yandex.ru</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <name>test 9</name>
+    <lastname>lastname 9</lastname>
+    <address>address 9</address>
+    <homePhone>999</homePhone>
+    <mobilePhone>9999</mobilePhone>
+    <workPhone>99</workPhone>
+    <email>yuselia+9@yandex.ru</email>
+    <email2>yuselia+99@yandex.ru</email2>
+    <email3>yuselia+999@yandex.ru</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <name>test 10</name>
+    <lastname>lastname 10</lastname>
+    <address>address 10</address>
+    <homePhone>101010</homePhone>
+    <mobilePhone>10101010</mobilePhone>
+    <workPhone>1010</workPhone>
+    <email>yuselia+10@yandex.ru</email>
+    <email2>yuselia+1010@yandex.ru</email2>
+    <email3>yuselia+101010@yandex.ru</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <name>test 11</name>
+    <lastname>lastname 11</lastname>
+    <address>address 11</address>
+    <homePhone>111111</homePhone>
+    <mobilePhone>11111111</mobilePhone>
+    <workPhone>1111</workPhone>
+    <email>yuselia+11@yandex.ru</email>
+    <email2>yuselia+1111@yandex.ru</email2>
+    <email3>yuselia+111111@yandex.ru</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <name>test 12</name>
+    <lastname>lastname 12</lastname>
+    <address>address 12</address>
+    <homePhone>121212</homePhone>
+    <mobilePhone>12121212</mobilePhone>
+    <workPhone>1212</workPhone>
+    <email>yuselia+12@yandex.ru</email>
+    <email2>yuselia+1212@yandex.ru</email2>
+    <email3>yuselia+121212@yandex.ru</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <name>test 13</name>
+    <lastname>lastname 13</lastname>
+    <address>address 13</address>
+    <homePhone>131313</homePhone>
+    <mobilePhone>13131313</mobilePhone>
+    <workPhone>1313</workPhone>
+    <email>yuselia+13@yandex.ru</email>
+    <email2>yuselia+1313@yandex.ru</email2>
+    <email3>yuselia+131313@yandex.ru</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <name>test 14</name>
+    <lastname>lastname 14</lastname>
+    <address>address 14</address>
+    <homePhone>141414</homePhone>
+    <mobilePhone>14141414</mobilePhone>
+    <workPhone>1414</workPhone>
+    <email>yuselia+14@yandex.ru</email>
+    <email2>yuselia+1414@yandex.ru</email2>
+    <email3>yuselia+141414@yandex.ru</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <name>test 15</name>
+    <lastname>lastname 15</lastname>
+    <address>address 15</address>
+    <homePhone>151515</homePhone>
+    <mobilePhone>15151515</mobilePhone>
+    <workPhone>1515</workPhone>
+    <email>yuselia+15@yandex.ru</email>
+    <email2>yuselia+1515@yandex.ru</email2>
+    <email3>yuselia+151515@yandex.ru</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <name>test 16</name>
+    <lastname>lastname 16</lastname>
+    <address>address 16</address>
+    <homePhone>161616</homePhone>
+    <mobilePhone>16161616</mobilePhone>
+    <workPhone>1616</workPhone>
+    <email>yuselia+16@yandex.ru</email>
+    <email2>yuselia+1616@yandex.ru</email2>
+    <email3>yuselia+161616@yandex.ru</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <name>test 17</name>
+    <lastname>lastname 17</lastname>
+    <address>address 17</address>
+    <homePhone>171717</homePhone>
+    <mobilePhone>17171717</mobilePhone>
+    <workPhone>1717</workPhone>
+    <email>yuselia+17@yandex.ru</email>
+    <email2>yuselia+1717@yandex.ru</email2>
+    <email3>yuselia+171717@yandex.ru</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <name>test 18</name>
+    <lastname>lastname 18</lastname>
+    <address>address 18</address>
+    <homePhone>181818</homePhone>
+    <mobilePhone>18181818</mobilePhone>
+    <workPhone>1818</workPhone>
+    <email>yuselia+18@yandex.ru</email>
+    <email2>yuselia+1818@yandex.ru</email2>
+    <email3>yuselia+181818@yandex.ru</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <name>test 19</name>
+    <lastname>lastname 19</lastname>
+    <address>address 19</address>
+    <homePhone>191919</homePhone>
+    <mobilePhone>19191919</mobilePhone>
+    <workPhone>1919</workPhone>
+    <email>yuselia+19@yandex.ru</email>
+    <email2>yuselia+1919@yandex.ru</email2>
+    <email3>yuselia+191919@yandex.ru</email3>
+    <group>test 1</group>
+  </contact>
+</list>
