@@ -1,14 +1,17 @@
 package ru.stqa.pft.addressbook.tests;
 
+import com.thoughtworks.xstream.XStream;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.*;
@@ -18,25 +21,17 @@ public class ContactCreationTests extends TestBase {
     @DataProvider
     public Iterator<Object[]> validContacts() throws IOException {
         File photo = new File("src/test/resources/stru.png");
-        List<Object[]> list = new ArrayList<Object[]>();
-        BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.csv")));
+        BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.xml")));
+        String xml = "";
         String line = reader.readLine();
-        while (line!=null) {
-            String[] split = line.split(";");
-            list.add(new Object[] {new ContactData().withName(split[0])
-            .withLastname(split[1])
-            .withAddress(split[2])
-            .withHomePhone(split[3])
-            .withMobilePhone(split[4])
-            .withWorkPhone(split[5])
-            .withEmail(split[6])
-            .withEmail2(split[7])
-            .withEmail3(split[8])
-            .withGroup(split[9])
-            .withPhoto(photo)});
-            line=reader.readLine();
+        while (line != null) {
+            xml += line;
+            line = reader.readLine();
         }
-        return list.iterator();
+        XStream xstream = new XStream();
+        xstream.processAnnotations(ContactData.class);
+        List<ContactData> contacts = (List<ContactData>) xstream.fromXML(xml);
+        return contacts.stream().map((c) -> new Object[] {c.withPhoto(photo)}).collect(Collectors.toList()).iterator();
     }
 
     @Test (dataProvider = "validContacts")
