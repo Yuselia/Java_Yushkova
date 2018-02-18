@@ -21,6 +21,9 @@ public class GroupDataGenerator {
   @Parameter (names = "-f", description = "Target file")
   public String file;
 
+  @Parameter (names = "-d", description = "Data format")
+  public String format;
+
   public static void main(String[] args) throws IOException {
     GroupDataGenerator generator = new GroupDataGenerator();
     JCommander jCommander = new JCommander(generator);
@@ -52,8 +55,8 @@ public class GroupDataGenerator {
     List<GroupData> groups = new ArrayList<GroupData>();
     for (int i = 0; i < count; i++) {
       groups.add(new GroupData().withName(String.format("test %s", i))
-              .withHeader(String.format("header %s", i))
-              .withFooter(String.format("footer %s", i)));
+              .withHeader(String.format("header\n%s", i))
+              .withFooter(String.format("footer\n%s", i)));
     }
     return groups;
   }
