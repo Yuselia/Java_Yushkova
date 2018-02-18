@@ -17,19 +17,23 @@ public class ContactCreationTests extends TestBase {
 
     @DataProvider
     public Iterator<Object[]> validContacts() {
+        File photo = new File("src/test/resources/stru.png");
         List<Object[]> list = new ArrayList<Object[]>();
-        list.add(new Object[] {"test 1", "lastname 1", "address 1", "test1", "12345", "89271111111", "yuselia@yandex.ru", "src/test/resources/stru.png"});
-        list.add(new Object[] {"test 2", "lastname 2", "address 2", "test1", "12345", "89271111111", "yuselia@yandex.ru", "src/test/resources/stru.png"});
-        list.add(new Object[] {"test 3", "lastname 3", "address 3", "test1", "12345", "89271111111", "yuselia@yandex.ru", "src/test/resources/stru.png"});
+        list.add(new Object[] {new ContactData().withName("test 1").withLastname("lastname 1").withAddress("address 1")
+                .withGroup("test1").withHomePhone("12345").withMobilePhone("89271111111")
+        .withEmail("yuselia@yandex.ru").withPhoto(photo)});
+        list.add(new Object[] {new ContactData().withName("test 2").withLastname("lastname 1").withAddress("address 1")
+                .withGroup("test1").withHomePhone("12345").withMobilePhone("89271111111")
+                .withEmail("yuselia@yandex.ru").withPhoto(photo)});
+        list.add(new Object[] {new ContactData().withName("test 3").withLastname("lastname 1").withAddress("address 1")
+                .withGroup("test1").withHomePhone("12345").withMobilePhone("89271111111")
+                .withEmail("yuselia@yandex.ru").withPhoto(photo)});
         return list.iterator();
     }
 
     @Test (dataProvider = "validContacts")
-    public void testContactCreation(String name, String lastname, String address, String group, String homePhone, String mobilePhone, String email, String pathToPhoto) {
-        File photo = new File(pathToPhoto);
-        ContactData contact = new ContactData().withName(name).withLastname(lastname).withGroup(group)
-               .withAddress(address).withHomePhone(homePhone).withMobilePhone(mobilePhone)
-               .withEmail(email).withPhoto(photo);
+    public void testContactCreation(ContactData contact) {
+
         app.goTo().homePage();
         Contacts before = app.contact().all();
         app.contact().create(contact);

@@ -42,7 +42,7 @@ public class ContactDataGenerator {
   private void save(List<ContactData> contacts, File file) throws IOException {
     Writer writer = new FileWriter(file);
     for (ContactData contact: contacts) {
-      writer.write(String.format("%s:%s;%s;%s;%s;%s;%s;%s;%s;%s;src/test/resources/stru.png\n", contact.getName(), contact.getLastname(),
+      writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n", contact.getName(), contact.getLastname(),
               contact.getAddress(), contact.getHomePhone(), contact.getMobilePhone(),
               contact.getWorkPhone(), contact.getEmail(), contact.getEmail2(),
               contact.getEmail3(), contact.getGroup()));
