@@ -34,5 +34,17 @@
     "email2": "yuselia+22@yandex.ru",
     "email3": "yuselia+222@yandex.ru",
     "group": "test 1"
+  },
+  {
+    "name": "test 3",
+    "lastname": "lastname 3",
+    "address": "address 3",
+    "homePhone": "333",
+    "mobilePhone": "3333",
+    "workPhone": "33",
+    "email": "yuselia+3@yandex.ru",
+    "email2": "yuselia+33@yandex.ru",
+    "email3": "yuselia+333@yandex.ru",
+    "group": "test 1"
   }
 ]
