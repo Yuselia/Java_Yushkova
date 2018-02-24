@@ -73,8 +73,7 @@ public class ContactData {
   private String group;
 
   @Expose
-  @Column(name="photo")
-  @Type(type="text")
+  @Transient
   private String photo;
 
   public int getId() {
