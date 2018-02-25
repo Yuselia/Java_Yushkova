@@ -8,12 +8,14 @@ import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
 
+import java.io.File;
+
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.*;
 import static org.testng.Assert.*;
 
 public class ContactModificationTests extends TestBase {
-
+  File photo = new File("src/test/resources/stru.png");
  @BeforeMethod
  public void ensurePreconditions() {
    if (app.db().contacts().size()==0) {
@@ -27,7 +29,10 @@ public class ContactModificationTests extends TestBase {
     Contacts before = app.db().contacts();
     ContactData modifiedContact = before.iterator().next();
     ContactData contact = new ContactData().
-            withId(modifiedContact.getId()).withName("test1").withLastname("test1").withAddress("address").withHomePhone("22222").withMobilePhone("11111111").withEmail("yushkova@haulmont.com");
+            withId(modifiedContact.getId()).withName("test1").withLastname("test1")
+            .withAddress("address")
+            .withHomePhone("22222").withMobilePhone("11111111")
+            .withEmail("yushkova@haulmont.com").withPhoto(photo);
     app.goTo().homePage();
     app.contact().modify(contact);
     assertThat(app.contact().count(), equalTo(before.size()));

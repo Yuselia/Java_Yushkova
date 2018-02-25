@@ -15,7 +15,7 @@ public class ContactData {
   @XStreamOmitField
   @Id
   @Column(name="id")
-  private int id=Integer.MAX_VALUE;
+  private int id; //=Integer.MAX_VALUE;
 
   @Expose
   @Column(name="firstname")
@@ -129,6 +129,22 @@ public class ContactData {
   }
 
   @Override
+  public String toString() {
+    return "ContactData{" +
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", lastname='" + lastname + '\'' +
+            ", address='" + address + '\'' +
+            ", homePhone='" + homePhone + '\'' +
+            ", mobilePhone='" + mobilePhone + '\'' +
+            ", workPhone='" + workPhone + '\'' +
+            ", email='" + email + '\'' +
+            ", email2='" + email2 + '\'' +
+            ", email3='" + email3 + '\'' +
+            '}';
+  }
+
+  @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
@@ -142,11 +158,9 @@ public class ContactData {
     if (homePhone != null ? !homePhone.equals(that.homePhone) : that.homePhone != null) return false;
     if (mobilePhone != null ? !mobilePhone.equals(that.mobilePhone) : that.mobilePhone != null) return false;
     if (workPhone != null ? !workPhone.equals(that.workPhone) : that.workPhone != null) return false;
-    if (allPhones != null ? !allPhones.equals(that.allPhones) : that.allPhones != null) return false;
     if (email != null ? !email.equals(that.email) : that.email != null) return false;
     if (email2 != null ? !email2.equals(that.email2) : that.email2 != null) return false;
-    if (email3 != null ? !email3.equals(that.email3) : that.email3 != null) return false;
-    return allEmails != null ? allEmails.equals(that.allEmails) : that.allEmails == null;
+    return email3 != null ? email3.equals(that.email3) : that.email3 == null;
   }
 
   @Override
@@ -158,11 +172,9 @@ public class ContactData {
     result = 31 * result + (homePhone != null ? homePhone.hashCode() : 0);
     result = 31 * result + (mobilePhone != null ? mobilePhone.hashCode() : 0);
     result = 31 * result + (workPhone != null ? workPhone.hashCode() : 0);
-    result = 31 * result + (allPhones != null ? allPhones.hashCode() : 0);
     result = 31 * result + (email != null ? email.hashCode() : 0);
     result = 31 * result + (email2 != null ? email2.hashCode() : 0);
     result = 31 * result + (email3 != null ? email3.hashCode() : 0);
-    result = 31 * result + (allEmails != null ? allEmails.hashCode() : 0);
     return result;
   }
 
@@ -238,15 +250,6 @@ public class ContactData {
   public ContactData withPhoto(File photo) {
     this.photo = photo.getPath();
     return this;
-  }
-
-  @Override
-  public String toString() {
-    return "ContactData{" +
-            "id='" + id + '\'' +
-            ", name='" + name + '\'' +
-            ", lastname='" + lastname + '\'' +
-            '}';
   }
 
 }
