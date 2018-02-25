@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import ru.stqa.pft.addressbook.appmanager.ApplicationManager;
 import org.openqa.selenium.remote.BrowserType;
+import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
 import ru.stqa.pft.addressbook.model.GroupData;
 import ru.stqa.pft.addressbook.model.Groups;
@@ -61,7 +62,11 @@ public class TestBase {
     if (Boolean.getBoolean("verifyUI")) {
       Contacts dbContacts = app.db().contacts();
       Contacts uiContacts = app.contact().all();
-      assertThat(uiContacts, equalTo(dbContacts));
+      assertThat(uiContacts, equalTo(dbContacts
+              .stream().map((c) -> new ContactData().withId(c.getId()).withName(c.getName())
+              .withLastname(c.getLastname()).withAddress(c.getAddress())
+              .withAllPhones(c.getAllPhones()).withAllEmails(c.getAllEmails()))
+              .collect(Collectors.toSet())));
     }
   }
 }
