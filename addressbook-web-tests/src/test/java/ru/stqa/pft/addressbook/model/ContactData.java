@@ -74,7 +74,7 @@ public class ContactData {
   @Transient
   private String photo;
 
-  @ManyToMany
+  @ManyToMany (fetch = FetchType.EAGER)
   @JoinTable(name="address_in_groups",
           joinColumns = @JoinColumn(name="id"), inverseJoinColumns = @JoinColumn(name="group_id"))
   private Set<GroupData> groups=new HashSet<GroupData>();
@@ -251,4 +251,8 @@ public class ContactData {
     return this;
   }
 
+  public ContactData InGroup(GroupData group) {
+    groups.add(group);
+    return this;
+  }
 }
