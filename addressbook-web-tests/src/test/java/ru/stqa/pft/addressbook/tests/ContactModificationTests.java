@@ -21,7 +21,8 @@ public class ContactModificationTests extends TestBase {
    if (app.db().contacts().size()==0) {
      app.goTo().homePage();
      app.contact().create(new ContactData().withName("name").withLastname("Sourname")
-             .withGroup("test1").withAddress("Test street")
+             //.withGroup("test1")
+             .withAddress("Test street")
              .withHomePhone("12345").withMobilePhone("89271111111").withEmail("yuselia@yandex.ru")
      .withPhoto(photo));
    }
