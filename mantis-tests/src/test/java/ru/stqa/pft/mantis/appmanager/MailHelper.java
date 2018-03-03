@@ -18,13 +18,15 @@ public class MailHelper {
 
   public MailHelper(ApplicationManager app) {
     this.app = app;
-    wiser = new Wiser();
+    int port = 2020;
+    wiser = new Wiser(port);
   }
 
   public List<MailMessage> waitForMail(int count, long timeout) throws MessagingException, IOException {
     long start = System.currentTimeMillis();
     while (System.currentTimeMillis() < start+timeout) {
       if (wiser.getMessages().size() >= count) {
+        System.out.println(wiser.getMessages());
         return wiser.getMessages().stream().map((m) -> toModelMail(m)).collect(Collectors.toList());
       }
       try {
